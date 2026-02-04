@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Master Class: NTRCA Special</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --bg: #ecf0f1;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #2980b9, #2c3e50);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 { margin: 0; font-size: 2.5rem; }
+        .header p { opacity: 0.9; margin-top: 10px; font-size: 1.1rem; }
+
+        /* Formula Cards */
+        .section-title {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin: 30px 0 20px;
+            color: var(--primary);
+        }
+
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--success);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        
+        .math-eq {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            color: #d35400;
+            margin: 10px 0;
+        }
+
+        /* Tabs for Topics */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            background: #bdc3c7;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: inherit;
+        }
+        
+        .tab-btn.active { background: var(--primary); color: white; }
+
+        /* Practice Zone */
+        .quiz-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            border: 2px solid #3498db;
+        }
+
+        .question { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            transition: 0.2s;
+        }
+        .options button:hover { background: #e0f7fa; }
+        
+        .explanation {
+            background: #e8f8f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+            border-left: 4px solid var(--success);
+        }
+
+        /* Solved Button Style */
+        .btn-solve {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="header">
+        <h1>🧮 গণিত মাস্টার গাইড</h1>
+        <p>পাটিগণিত, বীজগণিত ও জ্যামিতি: শর্টকাট টেকনিক ও অনুশীলন</p>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showSection('algebra')">বীজগণিত</button>
+        <button class="tab-btn" onclick="showSection('arithmetic')">পাটিগণিত</button>
+        <button class="tab-btn" onclick="showSection('geometry')">জ্যামিতি</button>
+        <button class="tab-btn" style="background: var(--accent); color: white;" onclick="showSection('quiz')">মডেল টেস্ট</button>
+    </div>
+
+    <div id="algebra" class="content-section">
+        <h2 class="section-title">বীজগণিতের সেরা সূত্র ও টেকনিক</h2>
+        <div class="formula-grid">
+            <div class="card">
+                <h3>বর্গের মান নির্ণয়</h3>
+                <p>সবচেয়ে বেশি আসা প্রশ্ন (প্লাস থেকে প্লাস):</p>
+                <div class="math-eq">x + 1/x = a হলে, x² + 1/x² = a² - 2</div>
+                <p><small>উদাহরণ: x+1/x=3 হলে, মান হবে 3²-2 = 7</small></p>
+            </div>
+            <div class="card">
+                <h3>ঘন এর মান নির্ণয়</h3>
+                <p>কিউব বা ঘন এর ক্ষেত্রে:</p>
+                <div class="math-eq">x + 1/x = a হলে, x³ + 1/x³ = a³ - 3a</div>
+                <p><small>উদাহরণ: x+1/x=3 হলে, মান হবে 3³ - 3(3) = 27-9 = 18</small></p>
+            </div>
+            <div class="card">
+                <h3>লগারিদম (Logarithm)</h3>
+                <p>সহজ ৩টি নিয়ম:</p>
+                <ul>
+                    <li>Log 1 = 0</li>
+                    <li>Log<sub>a</sub>a = 1</li>
+                    <li>Log<sub>a</sub>(M<sup>r</sup>) = r Log<sub>a</sub>M</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="arithmetic" class="content-section" style="display:none;">
+        <h2 class="section-title">পাটিগণিতের জাদুকরী শর্টকাট</h2>
+        <div class="formula-grid">
+            <div class="card">
+                <h3>ঐকিক নিয়ম (কাজ ও সময়)</h3>
+                <p>দুজন মিলে কাজ করলে কত সময় লাগবে?</p>
+                <div class="math-eq">সময় = (M × N) / (M + N)</div>
+                <p><small>ক একটি কাজ ২০ দিনে, খ ৩০ দিনে করে। দুজনে একত্রে: (২০×৩০)/(২০+৩০) = ৬০০/৫০ = ১২ দিনে।</small></p>
+            </div>
+            <div class="card">
+                <h3>শতকরা (পাস-ফেল)</h3>
+                <p>উভয় বিষয়ে পাস/ফেলের সংখ্যা:</p>
+                <div class="math-eq">মোট = (১ম বিষয় + ২য় বিষয়) - উভয় বিষয়</div>
+                <p><small>লক্ষ্য রাখবেন সব যেন একই জাতের হয় (সব পাস অথবা সব ফেল)।</small></p>
+            </div>
+            <div class="card">
+                <h3>মুনাফা-আসল</h3>
+                <p>মুনাফার হার বের করার সূত্র:</p>
+                <div class="math-eq">I = Pnr / 100</div>
+                <p><small>I=মুনাফা, P=আসল, n=সময়, r=হার</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="geometry" class="content-section" style="display:none;">
+        <h2 class="section-title">জ্যামিতি: চিত্র ছাড়াই সমাধান</h2>
+        <div class="formula-grid">
+            <div class="card">
+                <h3>পিথাগোরাস ট্রিপলেট (মুখস্থ রাখুন)</h3>
+                <p>সমকোণী ত্রিভুজের বাহুর অনুপাত:</p>
+                <div class="math-eq">৩ : ৪ : ৫</div>
+                <div class="math-eq">৫ : ১২ : ১৩</div>
+                <div class="math-eq">৮ : ১৫ : ১৭</div>
+            </div>
+            <div class="card">
+                <h3>বৃত্তের ম্যাজিক</h3>
+                <p>ব্যাসার্ধ বাড়লে ক্ষেত্রফল কত বাড়ে?</p>
+                <div class="math-eq">বৃদ্ধি² গুণ</div>
+                <p><small>ব্যাসার্ধ ৩ গুণ বাড়লে ক্ষেত্রফল ৯ গুণ (৩²) বাড়বে।</small></p>
+            </div>
+            <div class="card">
+                <h3>ত্রিভুজের কোণ</h3>
+                <ul>
+                    <li>তিন কোণের সমষ্টি = ১৮০°</li>
+                    <li>বহিঃস্থ কোণগুলোর সমষ্টি = ৩৬০°</li>
+                    <li>সমবাহু ত্রিভুজের প্রতিটি কোণ = ৬০°</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="quiz" class="content-section" style="display:none;">
+        <div class="quiz-box">
+            <div style="display:flex; justify-content:space-between;">
+                <h2 style="margin-top:0;">গণিত লাইভ টেস্ট</h2>
+                <span style="font-size:1.5rem; font-weight:bold; color:var(--accent);" id="score">0/0</span>
+            </div>
+            
+            <div id="question-container">
+                </div>
+
+            <div id="explanation" class="explanation"></div>
+
+            <button onclick="nextQuestion()" style="margin-top:20px; padding:10px 20px; background:var(--primary); color:white; border:none; border-radius:5px; cursor:pointer; display:none;" id="next-btn">পরবর্তী প্রশ্ন &rarr;</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Tab Switching Logic
+    function showSection(id) {
+        document.querySelectorAll('.content-section').forEach(div => div.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+
+    // Math Quiz Data
+    const mathQuestions = [
+        {
+            q: "১. x - 1/x = 3 হলে, x² + 1/x² এর মান কত?",
+            options: ["7", "9", "11", "13"],
+            correct: 2,
+            desc: "আমরা জানি, (a-b)² + 2ab সূত্র হবে। <br> মান² + ২ = ৩² + ২ = ৯ + ২ = ১১।"
+        },
+        {
+            q: "২. একটি সমকোণী ত্রিভুজের ভূমি ১২ মি. ও অতিভুজ ১৩ মি. হলে লম্ব কত?",
+            options: ["৪ মি.", "৫ মি.", "৬ মি.", "৭ মি."],
+            correct: 1,
+            desc: "পিথাগোরাসের ৫:১২:১৩ অনুপাত অনুযায়ী, লম্ব অবশ্যই ৫ মি. হবে।"
+        },
+        {
+            q: "৩. ১ থেকে ১০০ পর্যন্ত মৌলিক সংখ্যা কয়টি?",
+            options: ["২১টি", "২৪টি", "২৫টি", "৩০টি"],
+            correct: 2,
+            desc: "১ থেকে ১০০ পর্যন্ত মৌলিক সংখ্যা ২৫টি।"
+        },
+        {
+            q: "৪. টাকায় ৩টি করে আম কিনে, টাকায় ২টি করে বিক্রি করলে শতকরা লাভ কত?",
+            options: ["৩৩.৩৩%", "৫০%", "২৫%", "২০%"],
+            correct: 1,
+            desc: "লাভের সূত্র: (১/বিক্রিত সংখ্যা) × ১০০ = (১/২) × ১০০ = ৫০%।"
+        },
+        {
+            q: "৫. পিতা ও পুত্রের বয়সের অনুপাত ৭:২। ৫ বছর পর তাদের অনুপাত ৮:৩ হলে পিতার বর্তমান বয়স কত?",
+            options: ["৩৫", "৪০", "৪২", "৪৫"],
+            correct: 0,
+            desc: "শর্টকাট: অনুপাতের পার্থক্য (৮-৭)=১ ভাগ। ১ ভাগ = ৫ বছর। পিতার বর্তমান ৭ ভাগ = ৭×৫ = ৩৫ বছর।"
+        },
+        {
+            q: "৬. বৃত্তের ব্যাস ৩ গুণ বৃদ্ধি পেলে ক্ষেত্রফল কত গুণ বৃদ্ধি পাবে?",
+            options: ["৩ গুণ", "৬ গুণ", "৯ গুণ", "১২ গুণ"],
+            correct: 2,
+            desc: "ব্যাস বা ব্যাসার্ধ যত গুণ বাড়ে, ক্ষেত্রফল তার বর্গের হারে বাড়ে। ৩² = ৯ গুণ।"
+        },
+        {
+            q: "৭. log 10 based 100 এর মান কত?",
+            options: ["10", "2", "1", "100"],
+            correct: 1,
+            desc: "log10(100) = log10(10²) = 2 log10(10) = 2 × 1 = 2।"
+        }
+    ];
+
+    let currentQIndex = 0;
+    let score = 0;
+
+    function loadQuestion() {
+        const q = mathQuestions[currentQIndex];
+        const container = document.getElementById('question-container');
+        document.getElementById('explanation').style.display = 'none';
+        document.getElementById('next-btn').style.display = 'none';
+        
+        let html = `<div class="question">${q.q}</div><div class="options">`;
+        q.options.forEach((opt, idx) => {
+            html += `<button onclick="checkAnswer(${idx}, this)">${opt}</button>`;
+        });
+        html += `</div>`;
+        
+        container.innerHTML = html;
+        document.getElementById('score').innerText = `${score}/${mathQuestions.length}`;
+    }
+
+    function checkAnswer(selectedIdx, btn) {
+        const q = mathQuestions[currentQIndex];
+        const buttons = document.querySelectorAll('.options button');
+        
+        buttons.forEach(b => b.disabled = true); // Disable all
+        
+        if (selectedIdx === q.correct) {
+            btn.style.background = '#d4edda';
+            btn.style.borderColor = '#28a745';
+            score++;
+        } else {
+            btn.style.background = '#f8d7da';
+            btn.style.borderColor = '#dc3545';
+            buttons[q.correct].style.background = '#d4edda'; // Show correct
+        }
+        
+        const expDiv = document.getElementById('explanation');
+        expDiv.innerHTML = `<strong>ব্যাখ্যা:</strong> ${q.desc}`;
+        expDiv.style.display = 'block';
+        document.getElementById('next-btn').style.display = 'block';
+        document.getElementById('score').innerText = `${score}/${mathQuestions.length}`;
+    }
+
+    function nextQuestion() {
+        currentQIndex++;
+        if (currentQIndex < mathQuestions.length) {
+            loadQuestion();
+        } else {
+            document.getElementById('question-container').innerHTML = `
+                <div style="text-align:center;">
+                    <h2>পরীক্ষা শেষ!</h2>
+                    <p>আপনার স্কোর: ${score} / ${mathQuestions.length}</p>
+                    <button onclick="location.reload()" style="padding:10px 20px; background:var(--primary); color:white; border:none; border-radius:5px; cursor:pointer;">আবার শুরু করুন</button>
+                </div>
+            `;
+            document.getElementById('explanation').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'none';
+        }
+    }
+
+    // Initialize Quiz
+    loadQuestion();
+
+</script>
+
+</body>
+</html>
