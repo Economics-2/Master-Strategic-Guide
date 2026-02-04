@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Monjurul Haque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: margin-left 0.5s; /* মেনু এনিমেশনের জন্য */
+        }
+
+        /* --- সাইডবার মেনু স্টাইল --- */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+        }
+
+        .sidebar a {
+            padding: 10px 15px 10px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #bdc3c7;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar a:hover {
+            color: var(--white);
+            background-color: var(--accent-color);
+            padding-left: 40px;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            border: none;
+        }
+
+        /* --- মেইন কন্টেন্ট এরিয়া --- */
+        #main {
+            transition: margin-left 0.5s;
+            padding: 20px;
+        }
+
+        /* মেনু বাটন */
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            color: var(--primary-color);
+            background: rgba(255,255,255,0.8);
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* --- প্রোফাইল সেকশন --- */
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 80px 20px 40px;
+            text-align: center;
+            border-radius: 0 0 50% 50% / 20px;
+            margin-bottom: 50px;
+        }
+
+        .profile-img-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto -90px; /* নেগেটিভ মার্জিন দিয়ে নিচে নামানো হয়েছে */
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            background: white;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-text {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .intro-text h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .intro-text p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        /* --- ডিটেইলস কার্ড --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        /* --- বাটন স্টাইল --- */
+        .btn-contact {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn-contact:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* --- ডেমো পেজ লিস্ট স্টাইল (যদি বডিতে দেখাতে চান) --- */
+        .demo-list li {
+            margin-bottom: 8px;
+        }
+
+        /* রেসপন্সিভ */
+        @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div style="color:white; padding: 20px; text-align:center; border-bottom:1px solid #444;">মেনু তালিকা</div>
+        
+        <a href="index.html"><i class="fas fa-home"></i> হোম পেজ</a>
+        <a href="suggestion.html"><i class="fas fa-book"></i> শিক্ষক নিবন্ধন গাইড</a>
+        <a href="math_prep.html"><i class="fas fa-calculator"></i> ম্যাথ মাস্টার ক্লাস</a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i> অনলাইন কোর্সসমূহ</a>
+        <a href="#"><i class="fas fa-blog"></i> ব্লগ ও আর্টিকেল</a>
+        <a href="#"><i class="fas fa-images"></i> গ্যালারি</a>
+        <a href="#"><i class="fab fa-youtube"></i> StarLine চ্যানেল</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i> EcoHut শপ</a>
+        <a href="#"><i class="fas fa-robot"></i> AI টুলস কালেকশন</a>
+        <a href="#"><i class="fas fa-envelope"></i> যোগাযোগ</a>
+    </div>
+
+    <div id="main">
+        
+        <span class="menu-btn" onclick="openNav()">&#9776; মেনু</span>
+
+        <div class="profile-header">
+            <h2>শিক্ষকতা ও প্রযুক্তির মেলবন্ধন</h2>
+        </div>
+
+        <div class="profile-img-container">
+            <img src="https://img.freepik.com/free-photo/portrait-young-business-man-holding-glasses_23-2148834925.jpg" alt="Monjurul Haque" class="profile-img">
+            </div>
+
+        <div class="intro-text">
+            <h1>মোঃ মঞ্জুরুল হক</h1>
+            <p>প্রভাষক (অর্থনীতি) | ওয়েব ডেভেলপার | AI এনথুজিয়াস্ট</p>
+            <p style="font-size: 0.9em; color: #555;">জিয়াউদ্দিন স্কুল এন্ড কলেজ, কিশোরগঞ্জ</p>
+        </div>
+
+        <div class="container">
+            
+            <div class="card" style="margin-top: 40px;">
+                <h2><i class="fas fa-user"></i> আমার সম্পর্কে</h2>
+                <p>
+                    আমি মোঃ মঞ্জুরুল হক, পেশায় একজন অর্থনীতির প্রভাষক হলেও আমার নেশা এবং ভালোবাসা হলো প্রযুক্তি। আমি জিয়াউদ্দিন স্কুল এন্ড কলেজে শিক্ষকতার পাশাপাশি আমার ছাত্র-ছাত্রীদের আইসিটি, অনলাইন জগত এবং কৃত্রিম বুদ্ধিমত্তা (AI) সম্পর্কে ধারণা দিতে ভালোবাসি।
+                </p>
+                <p>
+                    আমার লক্ষ্য হলো অর্থনীতির জটিল বিষয়গুলোকে সহজভাবে উপস্থাপন করা এবং এআই (Artificial Intelligence) ব্যবহার করে শিক্ষার্থীদের কর্মমুখী ও স্বাবলম্বী করে তোলা। আমি নিয়মিত ওয়েব ডেভেলপমেন্ট, গ্রাফিক্স ডিজাইন এবং কন্টেন্ট ক্রিয়েশন নিয়ে কাজ করি।
+                </p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-lightbulb"></i> দক্ষতা ও আগ্রহ</h2>
+                <div class="info-grid">
+                    <div>
+                        <h3>শিক্ষকতা</h3>
+                        <ul>
+                            <li>অর্থনীতি (একাদশ-দ্বাদশ)</li>
+                            <li>ICT ও প্রযুক্তি</li>
+                            <li>ক্যারিয়ার গাইডলাইন</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>প্রযুক্তি</h3>
+                        <ul>
+                            <li>Web Development (HTML, CSS, JS)</li>
+                            <li>Flutter App Development</li>
+                            <li>AI Tools (Gemini, ChatGPT)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-trophy"></i> প্রজেক্ট ও প্রকাশনা</h2>
+                <ul class="demo-list">
+                    <li><strong>বই:</strong> "প্রতিদিন ১০ মিনিট! অনলাইন থেকে সহজ আয়" এবং "ফেসবুক থেকে আয়: নতুনদের জন্য গাইড"।</li>
+                    <li><strong>ইউটিউব:</strong> "StarLine" চ্যানেলে শিক্ষামূলক কন্টেন্ট তৈরি।</li>
+                    <li><strong>ওয়েব প্রজেক্ট:</strong> EcoHut (ই-কমার্স), Diganta (ই-বুক স্টোর), MH Web Academy।</li>
+                    <li><strong>অ্যাপ:</strong> ৯৯ নাম (Flutter App), HSC মডেল টেস্ট জেনারেটর।</li>
+                </ul>
+            </div>
+
+            <div class="card" style="text-align: center; border-left: none; border-top: 5px solid var(--primary-color);">
+                <h2>যোগাযোগ করুন</h2>
+                <p>শিক্ষাবিষয়ক পরামর্শ বা ওয়েব ডেভেলপমেন্ট প্রজেক্টের জন্য যোগাযোগ করতে পারেন।</p>
+                
+                <div style="font-size: 1.2rem; margin: 20px 0;">
+                    <i class="fas fa-envelope"></i> example@email.com <br>
+                    <i class="fas fa-phone"></i> +880 1XXX XXXXXX <br>
+                    <i class="fas fa-map-marker-alt"></i> কিশোরগঞ্জ, ঢাকা, বাংলাদেশ
+                </div>
+
+                <a href="#" class="btn-contact">মেসেজ পাঠান</a>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; padding: 20px; color: #777; font-size: 0.9em;">
+            &copy; ২০২৬ মোঃ মঞ্জুরুল হক। সর্বস্বত্ব সংরক্ষিত।
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+</body>
+</html>
