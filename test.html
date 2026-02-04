@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTRCA Smart Mock Test</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .quiz-container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .timer {
+            background: #ffebee;
+            color: #c62828;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .question-box {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .options-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .btn-option {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            text-align: left;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-option:hover:not([disabled]) {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+        }
+
+        .btn-option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .btn-option.wrong {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-next {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: none; /* Hidden initially */
+        }
+        
+        .btn-next:hover {
+            background-color: #1a252f;
+        }
+
+        .result-screen {
+            text-align: center;
+            display: none;
+        }
+        
+        .score-circle {
+            width: 100px;
+            height: 100px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 20px auto;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div id="quiz-screen">
+        <div class="header">
+            <div class="title">NTRCA স্পেশাল টেস্ট</div>
+            <div class="timer" id="timer">সময়: ০০:০০</div>
+        </div>
+        
+        <div class="question-progress" style="margin-bottom: 10px; color: #777; font-size: 0.9em;">
+            প্রশ্ন <span id="current-q">1</span> / <span id="total-q">5</span>
+        </div>
+
+        <div class="question-box" id="question-text">
+            প্রশ্ন লোড হচ্ছে...
+        </div>
+
+        <div class="options-grid" id="options-container">
+            </div>
+
+        <div class="feedback" id="feedback-box"></div>
+
+        <div class="controls">
+            <button class="btn-next" id="next-btn" onclick="nextQuestion()">পরবর্তী প্রশ্ন &rarr;</button>
+        </div>
+    </div>
+
+    <div id="result-screen" class="result-screen">
+        <h2>পরীক্ষা শেষ!</h2>
+        <p>আপনার স্কোর:</p>
+        <div class="score-circle">
+            <span id="final-score">0</span>
+        </div>
+        <p id="performance-msg"></p>
+        <button class="btn-next" style="display:inline-block;" onclick="location.reload()">আবার চেষ্টা করুন</button>
+    </div>
+</div>
+
+<script>
+    // প্রশ্ন ভাণ্ডার (এখানে আপনি ইচ্ছামতো আরও প্রশ্ন যোগ করতে পারবেন)
+    const questions = [
+        {
+            question: "১. 'অহি-নকুল' বাগধারাটির অর্থ কী?",
+            options: ["ভীষণ শত্রুতা", "গলায় গলায় ভাব", "মিথ্যা আশা", "উভয় সংকট"],
+            correct: 0,
+            explanation: "ব্যাখ্যা: অহি মানে সাপ এবং নকুল মানে বেজি। সাপ ও বেজির সম্পর্ক চিরশত্রুতার। তাই সঠিক উত্তর 'ভীষণ শত্রুতা'।"
+        },
+        {
+            question: "২. English: It is high time we _____ our bad habits.",
+            options: ["change", "changed", "have changed", "will change"],
+            correct: 1,
+            explanation: "ব্যাখ্যা: It is high time এর পর Subject থাকলে পরবর্তী Verb টি Past Indefinite Tense (V2) হয়।"
+        },
+        {
+            question: "৩. গণিত: বৃত্তের ব্যাস ৩ গুণ বাড়লে ক্ষেত্রফল কত গুণ বাড়বে?",
+            options: ["৩ গুণ", "৬ গুণ", "৯ গুণ", "১২ গুণ"],
+            correct: 2,
+            explanation: "ব্যাখ্যা: বৃত্তের ব্যাস বা ব্যাসার্ধ যত গুণ বাড়ে, ক্ষেত্রফল তার বর্গের (Square) সমানুপাতে বাড়ে। ৩² = ৯ গুণ।"
+        },
+        {
+            question: "৪. সাধারণ জ্ঞান: মুজিবনগর সরকার শপথ গ্রহণ করে কবে?",
+            options: ["১০ এপ্রিল ১৯৭১", "১৭ এপ্রিল ১৯৭১", "২৬ মার্চ ১৯৭১", "১৬ ডিসেম্বর ১৯৭১"],
+            correct: 1,
+            explanation: "ব্যাখ্যা: মুজিবনগর সরকার গঠিত হয় ১০ এপ্রিল, কিন্তু শপথ গ্রহণ করে ১৭ এপ্রিল ১৯৭১ সালে মেহেরপুরের বৈদ্যনাথতলায়।"
+        },
+        {
+            question: "৫. গণিত: Log 1 এর মান কত?",
+            options: ["0", "1", "10", "100"],
+            correct: 0,
+            explanation: "ব্যাখ্যা: যেকোনো ভিত্তির ওপর Log 1 এর মান সবসময় 0 হয়।"
+        },
+        {
+            question: "৬. বাংলা: কোনটি শুদ্ধ বানান?",
+            options: ["মুহুর্ত", "মুহূর্ত", "মূহুর্ত", "মূহূর্ত"],
+            correct: 1,
+            explanation: "ব্যাখ্যা: সঠিক বানান 'মুহূর্ত' (ম-এ হ্রস্ব উ, হ-এ দীর্ঘ ঊ এবং রেফ)।"
+        },
+        {
+            question: "৭. English: Meaning of the word 'Candid'?",
+            options: ["Secret", "Dishonest", "Frank", "Rude"],
+            correct: 2,
+            explanation: "ব্যাখ্যা: Candid অর্থ স্পষ্টবাদী বা অকপট। যার সমার্থক শব্দ Frank।"
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let timerInterval;
+    let seconds = 0;
+
+    // DOM Elements
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackBox = document.getElementById('feedback-box');
+    const nextBtn = document.getElementById('next-btn');
+    const currentQSpan = document.getElementById('current-q');
+    const totalQSpan = document.getElementById('total-q');
+    const timerDisplay = document.getElementById('timer');
+    
+    // Initialize Quiz
+    function initQuiz() {
+        document.getElementById('total-q').innerText = questions.length;
+        loadQuestion();
+        startTimer();
+    }
+
+    // Timer Function
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            seconds++;
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            timerDisplay.innerText = `সময়: ${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }, 1000);
+    }
+
+    // Load Question
+    function loadQuestion() {
+        const q = questions[currentQuestion];
+        questionText.innerText = q.question;
+        currentQSpan.innerText = currentQuestion + 1;
+        optionsContainer.innerHTML = '';
+        feedbackBox.style.display = 'none';
+        nextBtn.style.display = 'none';
+
+        q.options.forEach((option, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-option';
+            btn.innerText = option;
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    // Check Answer
+    function checkAnswer(selectedIndex, btnElement) {
+        const q = questions[currentQuestion];
+        const buttons = optionsContainer.getElementsByClassName('btn-option');
+        
+        // Disable all buttons
+        for(let btn of buttons) {
+            btn.disabled = true;
+        }
+
+        if(selectedIndex === q.correct) {
+            btnElement.classList.add('correct');
+            score++;
+            feedbackBox.innerHTML = `✅ <strong>সঠিক!</strong> <br> ${q.explanation}`;
+            feedbackBox.style.backgroundColor = "#d4edda";
+            feedbackBox.style.borderColor = "#28a745";
+        } else {
+            btnElement.classList.add('wrong');
+            buttons[q.correct].classList.add('correct'); // Show correct one
+            feedbackBox.innerHTML = `❌ <strong>ভুল!</strong> সঠিক উত্তর: ${q.options[q.correct]} <br> ${q.explanation}`;
+            feedbackBox.style.backgroundColor = "#fff3cd";
+            feedbackBox.style.borderColor = "#ffc107";
+        }
+
+        feedbackBox.style.display = 'block';
+        nextBtn.style.display = 'block';
+    }
+
+    // Next Question
+    function nextQuestion() {
+        currentQuestion++;
+        if(currentQuestion < questions.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    // Show Result
+    function showResult() {
+        clearInterval(timerInterval);
+        document.getElementById('quiz-screen').style.display = 'none';
+        document.getElementById('result-screen').style.display = 'block';
+        
+        document.getElementById('final-score').innerText = score + "/" + questions.length;
+        
+        const percentage = (score / questions.length) * 100;
+        let msg = "";
+        if(percentage >= 80) msg = "অসাধারণ! আপনার প্রস্তুতি খুবই ভালো।";
+        else if(percentage >= 60) msg = "ভালো, তবে আরও চর্চা প্রয়োজন।";
+        else msg = "আরও কঠোর পরিশ্রম করতে হবে।";
+        
+        document.getElementById('performance-msg').innerText = msg;
+    }
+
+    // Start
+    initQuiz();
+
+</script>
+
+</body>
+</html>
