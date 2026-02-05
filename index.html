@@ -997,6 +997,40 @@
             });
         }
     </script>
+    
+<div id="visitor-panel" style="position: fixed; bottom: 20px; right: 20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-family: sans-serif; z-index: 9999; border-left: 5px solid #007bff; min-width: 200px;">
+    <h4 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">📊 Visitor Stats</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: #666; font-size: 14px;">Total Views:</span>
+        <span id="visit-count" style="font-weight: bold; color: #007bff; font-size: 18px;">Loading...</span>
+    </div>
+    <div style="margin-top: 5px; font-size: 10px; color: #999; text-align: right;">
+        Status: <span style="color: green;">● Live</span>
+    </div>
+</div>
 
+<script>
+    // অনন্য নাম দিয়ে API সেট করা হচ্ছে (যাতে অন্য সাইটের সাথে মিশে না যায়)
+    const namespace = 'economics-2-master-guide';
+    const key = 'visits';
+
+    function updateCounter() {
+        // কাউন্টার API কল করা (CountAPI.xyz অথবা similar free service)
+        // নোট: এখানে আমরা 'countapi-js' এর একটি বিকল্প লজিক ব্যবহার করছি
+        // সরাসরি ফেচ রিকোয়েস্ট:
+        fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('visit-count').innerText = data.count;
+            })
+            .catch(err => {
+                console.error('Counter Error:', err);
+                document.getElementById('visit-count').innerText = "N/A";
+            });
+    }
+
+    // পেজ লোড হলে কল হবে
+    document.addEventListener('DOMContentLoaded', updateCounter);
+</script>
 </body>
 </html>
