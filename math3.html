@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* কার্ড কন্টেইনার ডিজাইন - রেস্পন্সিভ গ্রিড */
+    .formula-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        font-family: 'SolaimanLipi', sans-serif;
+    }
+    /* কার্ড ডিজাইন */
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #fcfaff; /* জ্যামিতির জন্য হালকা বেগুনি শেড */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .card h3 {
+        margin-top: 0;
+        color: #8e44ad; /* শিরোনামের রঙ */
+        font-size: 1.1em;
+        border-bottom: 2px solid #9b59b6;
+        padding-bottom: 10px;
+    }
+    .math-eq {
+        background: #fff;
+        padding: 10px;
+        border-left: 4px solid #9b59b6;
+        font-weight: bold;
+        font-family: 'Courier New', monospace;
+        margin: 10px 0;
+        color: #2c3e50;
+        font-size: 0.95em;
+    }
+    small {
+        color: #666;
+        display: block;
+        margin-top: 5px;
+        font-size: 0.85em;
+    }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; color:#8e44ad;">জ্যামিতি: চিত্র ছাড়াই সমাধান (৫০টি সূত্র)</h2>
+
+<div class="formula-container">
+
+    <div class="card">
+        <h3>১. পূরক কোণ নির্ণয়</h3>
+        <p>দুটি কোণের যোগফল ৯০°। একটি x হলে অন্যটি:</p>
+        <div class="math-eq">পূরক কোণ = ৯০° - x</div>
+        <p><small>উদাঃ ৪০° এর পূরক কোণ = ৫০°</small></p>
+    </div>
+
+    <div class="card">
+        <h3>২. সম্পূরক কোণ নির্ণয়</h3>
+        <p>দুটি কোণের যোগফল ১৮০°। একটি x হলে অন্যটি:</p>
+        <div class="math-eq">সম্পূরক কোণ = ১৮০° - x</div>
+        <p><small>উদাঃ ৬০° এর সম্পূরক কোণ = ১২০°</small></p>
+    </div>
+
+    <div class="card">
+        <h3>৩. প্রবৃদ্ধ কোণ (Reflex Angle)</h3>
+        <p>১৮০° এর চেয়ে বড়, ৩৬০° এর চেয়ে ছোট।</p>
+        <div class="math-eq">প্রবৃদ্ধ কোণ = ৩৬০° - ভিতরের কোণ</div>
+    </div>
+
+    <div class="card">
+        <h3>৪. বিপ্রতীপ কোণ (Opposite)</h3>
+        <p>দুটি রেখা ছেদ করলে বিপরীত কোণগুলো সমান হয়।</p>
+        <div class="math-eq">কোণ A = কোণ B (বিপরীত পাশে)</div>
+    </div>
+
+    <div class="card">
+        <h3>৫. সন্নিহিত কোণ (সরলরেখা)</h3>
+        <p>একটি সরলরেখার ওপর দণ্ডায়মান দুটি কোণের সমষ্টি:</p>
+        <div class="math-eq">কোণদ্বয়ের সমষ্টি = ১৮০°</div>
+    </div>
+
+    <div class="card">
+        <h3>৬. ত্রিভুজের তিন কোণ</h3>
+        <p>যেকোনো ত্রিভুজের তিনটি কোণের সমষ্টি:</p>
+        <div class="math-eq">A + B + C = ১৮০°</div>
+    </div>
+
+    <div class="card">
+        <h3>৭. সমকোণী ত্রিভুজের কোণ</h3>
+        <p>একটি কোণ ৯০° হলে, বাকি দুটির যোগফল:</p>
+        <div class="math-eq">বাকি দুটি = ৯০°</div>
+    </div>
+
+    <div class="card">
+        <h3>৮. সমবাহু ত্রিভুজের কোণ</h3>
+        <p>প্রতিটি কোণের মান সর্বদা নির্দিষ্ট:</p>
+        <div class="math-eq">প্রতিটি কোণ = ৬০°</div>
+    </div>
+
+    <div class="card">
+        <h3>৯. সমদ্বিবাহু ত্রিভুজ</h3>
+        <p>সমান সমান বাহুর বিপরীত কোণগুলোও সমান।</p>
+        <div class="math-eq">ভূমি সংলগ্ন কোণদ্বয় পরস্পর সমান</div>
+    </div>
+
+    <div class="card">
+        <h3>১০. ত্রিভুজের বহিঃস্থ কোণ</h3>
+        <p>বহিঃস্থ কোণ বিপরীত অন্তঃস্থ কোণদ্বয়ের সমষ্টির সমান।</p>
+        <div class="math-eq">বহিঃস্থ C = অন্তঃস্থ A + অন্তঃস্থ B</div>
+    </div>
+
+    <div class="card">
+        <h3>১১. পিথাগোরাস ত্রয়ী (ম্যাজিক ১)</h3>
+        <p>সমকোণী ত্রিভুজের বাহুগুলো (মুখস্থ রাখুন):</p>
+        <div class="math-eq">৩, ৪, ৫</div>
+        <p><small>লম্ব ৩, ভূমি ৪ হলে অতিভুজ ৫ হবেই।</small></p>
+    </div>
+
+    <div class="card">
+        <h3>১২. পিথাগোরাস ত্রয়ী (ম্যাজিক ২)</h3>
+        <p>সমকোণী ত্রিভুজের বাহুগুলো:</p>
+        <div class="math-eq">৫, ১২, ১৩</div>
+        <p><small>অতিভুজ সর্বদা বড়টি (১৩) হবে।</small></p>
+    </div>
+
+    <div class="card">
+        <h3>১৩. পিথাগোরাস ত্রয়ী (ম্যাজিক ৩)</h3>
+        <p>সমকোণী ত্রিভুজের বাহুগুলো:</p>
+        <div class="math-eq">৮, ১৫, ১৭</div>
+    </div>
+
+    <div class="card">
+        <h3>১৪. পিথাগোরাস ত্রয়ী (ম্যাজিক ৪)</h3>
+        <p>সমকোণী ত্রিভুজের বাহুগুলো:</p>
+        <div class="math-eq">৬, ৮, ১০</div>
+        <p><small>এটি ৩-৪-৫ এর দ্বিগুণ।</small></p>
+    </div>
+
+    <div class="card">
+        <h3>১৫. ত্রিভুজের ক্ষেত্রফল (সাধারণ)</h3>
+        <p>ভূমি ও উচ্চতা দেওয়া থাকলে:</p>
+        <div class="math-eq">ক্ষেত্রফল = ০.৫ × ভূমি × উচ্চতা</div>
+    </div>
+
+    <div class="card">
+        <h3>১৬. সমবাহু ত্রিভুজের ক্ষেত্রফল</h3>
+        <p>এক বাহু 'a' হলে ক্ষেত্রফল:</p>
+        <div class="math-eq">Area = (√3 / 4) × a²</div>
+    </div>
+
+    <div class="card">
+        <h3>১৭. সমবাহু ত্রিভুজের উচ্চতা</h3>
+        <p>এক বাহু 'a' হলে উচ্চতা:</p>
+        <div class="math-eq">Height = (√3 / 2) × a</div>
+    </div>
+
+    <div class="card">
+        <h3>১৮. ত্রিভুজ হওয়ার শর্ত</h3>
+        <p>যেকোনো দুই বাহুর যোগফল:</p>
+        <div class="math-eq">৩য় বাহু অপেক্ষা বৃহত্তর হতে হবে</div>
+    </div>
+
+    <div class="card">
+        <h3>১৯. ত্রিভুজের মধ্যমা</h3>
+        <p>সমকোণী ত্রিভুজের অতিভুজের ওপর অঙ্কিত মধ্যমা:</p>
+        <div class="math-eq">মধ্যমা = অতিভুজ / ২</div>
+    </div>
+
+    <div class="card">
+        <h3>২০. বিষমবাহু ত্রিভুজ (হিরোস ফর্মুলা)</h3>
+        <p>অর্ধপরিসীমা s = (a+b+c)/2 হলে:</p>
+        <div class="math-eq">Area = √{s(s-a)(s-b)(s-c)}</div>
+    </div>
+
+    <div class="card">
+        <h3>২১. বর্গের কর্ণ নির্ণয়</h3>
+        <p>বর্গের বাহু 'a' হলে কর্ণ:</p>
+        <div class="math-eq">কর্ণ = √2 × a</div>
+        <p><small>উদাঃ বাহু ৫ হলে কর্ণ ৫√২</small></p>
+    </div>
+
+    <div class="card">
+        <h3>২২. বর্গের ক্ষেত্রফল (কর্ণ দিয়ে)</h3>
+        <p>কর্ণ 'd' দেওয়া থাকলে ক্ষেত্রফল:</p>
+        <div class="math-eq">ক্ষেত্রফল = ০.৫ × (কর্ণ)²</div>
+    </div>
+
+    <div class="card">
+        <h3>২৩. আয়তক্ষেত্রের কর্ণ</h3>
+        <p>দৈর্ঘ্য a, প্রস্থ b হলে:</p>
+        <div class="math-eq">কর্ণ = √(a² + b²)</div>
+    </div>
+
+    <div class="card">
+        <h3>২৪. আয়তক্ষেত্রের পরিসীমা</h3>
+        <p>চারপাশের দৈর্ঘ্য:</p>
+        <div class="math-eq">পরিসীমা = ২(দৈর্ঘ্য + প্রস্থ)</div>
+    </div>
+
+    <div class="card">
+        <h3>২৫. রম্বসের ক্ষেত্রফল</h3>
+        <p>কর্ণদ্বয় d1 এবং d2 হলে:</p>
+        <div class="math-eq">ক্ষেত্রফল = ০.৫ × d1 × d2</div>
+    </div>
+
+    <div class="card">
+        <h3>২৬. রম্বসের বাহু নির্ণয়</h3>
+        <p>কর্ণ দেওয়া থাকলে বাহু বের করার সূত্র:</p>
+        <div class="math-eq">বাহু = ০.৫ × √(d1² + d2²)</div>
+    </div>
+
+    <div class="card">
+        <h3>২৭. ট্রাপিজিয়ামের ক্ষেত্রফল</h3>
+        <p>সমান্তরাল বাহু a, b এবং উচ্চতা h:</p>
+        <div class="math-eq">Area = ০.৫ × (a + b) × h</div>
+    </div>
+
+    <div class="card">
+        <h3>২৮. সামান্তরিকের ক্ষেত্রফল</h3>
+        <p>ভূমি ও উচ্চতা দেওয়া থাকলে:</p>
+        <div class="math-eq">ক্ষেত্রফল = ভূমি × উচ্চতা</div>
+    </div>
+
+    <div class="card">
+        <h3>২৯. বহুভুজের কোণের সমষ্টি</h3>
+        <p>n সংখ্যক বাহু বিশিষ্ট বহুভুজের কোণ সমষ্টি:</p>
+        <div class="math-eq">সমষ্টি = (2n - 4) × ৯০°</div>
+    </div>
+
+    <div class="card">
+        <h3>৩০. সুষম বহুভুজের একটি কোণ</h3>
+        <p>প্রতিটি অন্তঃস্থ কোণের মান:</p>
+        <div class="math-eq">কোণ = {(2n - 4) × ৯০°} / n</div>
+    </div>
+
+    <div class="card">
+        <h3>৩১. বহুভুজের বহিঃস্থ কোণ</h3>
+        <p>সুষম বহুভুজের প্রতিটি বহিঃস্থ কোণ:</p>
+        <div class="math-eq">বহিঃস্থ কোণ = ৩৬০° / n</div>
+    </div>
+
+    <div class="card">
+        <h3>৩২. বহুভুজের বাহু নির্ণয়</h3>
+        <p>বহিঃস্থ কোণ দেওয়া থাকলে বাহুর সংখ্যা:</p>
+        <div class="math-eq">n = ৩৬০° / বহিঃস্থ কোণ</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৩. কর্ণের সংখ্যা নির্ণয়</h3>
+        <p>n বাহু বিশিষ্ট বহুভুজে কর্ণের সংখ্যা:</p>
+        <div class="math-eq">কর্ণ = {n(n - 3)} / 2</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৪. চতুর্ভুজের চার কোণ</h3>
+        <p>চতুর্ভুজের চার কোণের সমষ্টি:</p>
+        <div class="math-eq">সমষ্টি = ৩৬০° বা ৪ সমকোণ</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৫. রাস্তার ক্ষেত্রফল (বাইরে)</h3>
+        <p>দৈর্ঘ্য L, প্রস্থ B, রাস্তা w হলে:</p>
+        <div class="math-eq">Area = ২w(L + B + ২w)</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৬. বৃত্তের পরিধি</h3>
+        <p>ব্যাসার্ধ r হলে:</p>
+        <div class="math-eq">পরিধি = 2πr (যেখানে π = ২২/৭)</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৭. বৃত্তের ক্ষেত্রফল</h3>
+        <p>ব্যাসার্ধ r হলে:</p>
+        <div class="math-eq">ক্ষেত্রফল = πr²</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৮. ব্যাসার্ধ ও ক্ষেত্রফল সম্পর্ক</h3>
+        <p>ব্যাসার্ধ ৩ গুণ করলে ক্ষেত্রফল বাড়ে:</p>
+        <div class="math-eq">৩² বা ৯ গুণ</div>
+    </div>
+
+    <div class="card">
+        <h3>৩৯. বৃত্তের চাপের দৈর্ঘ্য</h3>
+        <p>কেন্দ্রে কোণ θ হলে:</p>
+        <div class="math-eq">চাপ (s) = (πrθ) / ১৮০</div>
+    </div>
+
+    <div class="card">
+        <h3>৪০. বৃত্তকলা বা সেক্টরের ক্ষেত্রফল</h3>
+        <p>কেন্দ্রে কোণ θ হলে:</p>
+        <div class="math-eq">ক্ষেত্রফল = (θ/৩৬০) × πr²</div>
+    </div>
+
+    <div class="card">
+        <h3>৪১. চাকার ঘূর্ণন সংখ্যা</h3>
+        <p>দূরত্ব অতিক্রম করতে চাকা কতবার ঘুরবে?</p>
+        <div class="math-eq">ঘূর্ণন = মোট দূরত্ব / পরিধি</div>
+    </div>
+
+    <div class="card">
+        <h3>৪২. অন্তবৃত্ত ও পরিবৃত্ত (বর্গ)</h3>
+        <p>বর্গের অন্তবৃত্ত ও পরিবৃত্তের ব্যাসার্ধের অনুপাত:</p>
+        <div class="math-eq">অনুপাত = ১ : √২</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৩. ঘনক (Cube) এর আয়তন</h3>
+        <p>এক ধার a হলে:</p>
+        <div class="math-eq">আয়তন = a³</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৪. ঘনকের কর্ণের দৈর্ঘ্য</h3>
+        <p>এক ধার a হলে:</p>
+        <div class="math-eq">কর্ণ = √3 × a</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৫. আয়তাকার ঘনবস্তুর আয়তন</h3>
+        <p>দৈর্ঘ্য a, প্রস্থ b, উচ্চতা c:</p>
+        <div class="math-eq">Volume = abc</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৬. ঘনবস্তুর সমগ্রতল</h3>
+        <p>বক্সের বাইরের তলের ক্ষেত্রফল:</p>
+        <div class="math-eq">Area = ২(ab + bc + ca)</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৭. ঘনবস্তুর কর্ণ</h3>
+        <p>রুমের ভিতর সবচেয়ে লম্বা দণ্ড রাখার সূত্র:</p>
+        <div class="math-eq">কর্ণ = √(a² + b² + c²)</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৮. বেলন বা সিলিন্ডারের আয়তন</h3>
+        <p>ব্যাসার্ধ r এবং উচ্চতা h হলে:</p>
+        <div class="math-eq">Volume = πr²h</div>
+    </div>
+
+    <div class="card">
+        <h3>৪৯. গোলকের আয়তন</h3>
+        <p>ব্যাসার্ধ r হলে:</p>
+        <div class="math-eq">Volume = (4/3)πr³</div>
+    </div>
+
+    <div class="card">
+        <h3>৫০. অর্ধবৃত্তস্থ কোণ</h3>
+        <p>অর্ধবৃত্তের উপর দণ্ডায়মান কোণ:</p>
+        <div class="math-eq">সর্বদা ৯০° বা এক সমকোণ হয়</div>
+    </div>
+
+</div>
+<p>বিশেষ দ্রষ্টব্য (চিত্র ছাড়া সমাধানের জন্য):
+১. পিথাগোরাস ত্রয়ী (১১-১৪ নং): এই সংখ্যাগুলো মুখস্থ থাকলে চিত্র না এঁকেই আপনি বলে দিতে পারবেন সমকোণী ত্রিভুজের অজানা বাহুটি কত। ২. সূত্রের খেলা: পরিমিতির অংকে চিত্র আঁকার দরকার নেই, শুধু মানগুলো সূত্রে বসিয়ে দিলেই উত্তর চলে আসে। ৩. অনুপাত: বৃত্তের ব্যাসার্ধ দ্বিগুণ হলে ক্ষেত্রফল যে ৪ গুণ হয় (বর্গাকারে বাড়ে), এটি মনে রাখলে ক্যালকুলেশন ছাড়াই উত্তর দেওয়া যায়।</p>
+</body>
+</html>
