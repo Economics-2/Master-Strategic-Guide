@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<style>
+    /* কন্টেইনার ডিজাইন */
+    .rules-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+        padding: 20px;
+        font-family: 'SolaimanLipi', sans-serif;
+        background-color: #f4f6f7;
+    }
+    /* কার্ড ডিজাইন */
+    .card {
+        border-left: 5px solid #2c3e50; /* রয়্যাল ব্লু */
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        border-left-color: #e74c3c; /* হোভার করলে লাল বর্ডার */
+    }
+    .card h3 {
+        margin: 0 0 10px 0;
+        color: #2c3e50;
+        font-size: 1.1em;
+        border-bottom: 1px dashed #bdc3c7;
+        padding-bottom: 5px;
+    }
+    .rule-item {
+        margin-bottom: 8px;
+        font-size: 0.95em;
+        color: #34495e;
+        line-height: 1.4;
+    }
+    .rule-number {
+        font-weight: bold;
+        color: #e74c3c;
+        margin-right: 5px;
+    }
+    .highlight {
+        background-color: #ecf0f1;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center; color:#2c3e50;">শিক্ষকদের ১০০টি অপরিহার্য চাকুরি বিধি</h2>
+
+<div class="rules-container">
+
+    <div class="card">
+        <h3>উপস্থিতি ও আগমন</h3>
+        <div class="rule-item"><span class="rule-number">০১.</span> ক্লাস শুরুর অন্তত ১৫ মিনিট পূর্বে বিদ্যালয়ে উপস্থিত হতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">০২.</span> ডিজিটাল হাজিরা বা হাজিরা খাতায় প্রবেশের সময় স্বাক্ষর নিশ্চিত করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>প্রস্থান ও বিলম্ব</h3>
+        <div class="rule-item"><span class="rule-number">০৩.</span> প্রতিষ্ঠান ছুটির আগে কর্তৃপক্ষের অনুমতি ছাড়া ক্যাম্পাস ত্যাগ করা যাবে না।</div>
+        <div class="rule-item"><span class="rule-number">০৪.</span> মাসে ৩ দিন বিলম্বে উপস্থিত হলে ১ দিনের নৈমিত্তিক ছুটি (CL) কর্তন হবে।</div>
+    </div>
+    <div class="card">
+        <h3>অ্যাসেম্বলি ও সমাবেশ</h3>
+        <div class="rule-item"><span class="rule-number">০৫.</span> প্রাত্যহিক সমাবেশে সকল শিক্ষককে বাধ্যতামূলক উপস্থিত থাকতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">০৬.</span> জাতীয় সংগীত গাওয়ার সময় যথাযথ সম্মান প্রদর্শন ও অংশগ্রহণ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>কর্মঘণ্টা</h3>
+        <div class="rule-item"><span class="rule-number">০৭.</span> অফ পিরিয়ডেও লাইব্রেরি ওয়ার্ক বা শিক্ষা উপকরণ তৈরির কাজ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">০৮.</span> টিফিন পিরিয়ডের পর যথা সময়ে পুনরায় কার্যক্রম শুরু করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>অনুপস্থিতি</h3>
+        <div class="rule-item"><span class="rule-number">০৯.</span> বিনা অনুমতিতে কর্মস্থলে অনুপস্থিত থাকা অসদাচরণ হিসেবে গণ্য হবে।</div>
+        <div class="rule-item"><span class="rule-number">১০.</span> অসুস্থতার কারণে অনুপস্থিত থাকলে পরবর্তীতে ডাক্তারি সনদ দাখিল করতে হবে।</div>
+    </div>
+
+    <div class="card">
+        <h3>নৈমিত্তিক ছুটি (CL)</h3>
+        <div class="rule-item"><span class="rule-number">১১.</span> বছরে সর্বোচ্চ ২০ দিন নৈমিত্তিক ছুটি ভোগ করা যাবে (অধিকার নয়, সুযোগ)।</div>
+        <div class="rule-item"><span class="rule-number">১২.</span> একটানা ১০ দিনের বেশি নৈমিত্তিক ছুটি নেওয়া যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>চিকিৎসা ছুটি</h3>
+        <div class="rule-item"><span class="rule-number">১৩.</span> রেজিস্টার্ড ডাক্তারের সুপারিশক্রমে চিকিৎসা ছুটি বা মেডিকেল লিভ নেওয়া যাবে।</div>
+        <div class="rule-item"><span class="rule-number">১৪.</span> গড় বেতনে অর্জিত ছুটি জমা থাকলে তা চিকিৎসার প্রয়োজনে ব্যবহার করা যাবে।</div>
+    </div>
+    <div class="card">
+        <h3>মাতৃত্বকালীন ছুটি</h3>
+        <div class="rule-item"><span class="rule-number">১৫.</span> মহিলা শিক্ষকরা ৬ মাস পূর্ণ বেতনে মাতৃত্বকালীন ছুটি পাবেন।</div>
+        <div class="rule-item"><span class="rule-number">১৬.</span> সমগ্র চাকুরি জীবনে সর্বোচ্চ ২ বার এই ছুটি ভোগ করা যাবে।</div>
+    </div>
+    <div class="card">
+        <h3>শ্রান্তি বিনোদন ছুটি</h3>
+        <div class="rule-item"><span class="rule-number">১৭.</span> প্রতি ৩ বছর অন্তর ১৫ দিনের শ্রান্তি বিনোদন ছুটি ও ভাতা প্রাপ্য হবেন।</div>
+        <div class="rule-item"><span class="rule-number">১৮.</span> এজন্য চাকুরির নির্দিষ্ট মেয়াদ ও সন্তোষজনক রেকর্ড থাকতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>ছুটি মঞ্জুরকারী কর্তৃপক্ষ</h3>
+        <div class="rule-item"><span class="rule-number">১৯.</span> নৈমিত্তিক ছুটি প্রধান শিক্ষক এবং প্রধান শিক্ষকের ছুটি সভাপতি মঞ্জুর করবেন।</div>
+        <div class="rule-item"><span class="rule-number">২০.</span> দীর্ঘমেয়াদী ছুটির জন্য ম্যানেজিং কমিটির অনুমোদন প্রয়োজন।</div>
+    </div>
+
+    <div class="card">
+        <h3>পাঠ পরিকল্পনা</h3>
+        <div class="rule-item"><span class="rule-number">২১.</span> প্রতিদিনের লেসন প্ল্যান বা পাঠটীকা নিয়ে শ্রেণিকক্ষে প্রবেশ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">২২.</span> বাৎসরিক সিলেবাস ভাগ করে নির্দিষ্ট সময়ে শেষ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>শ্রেণিকক্ষ ব্যবস্থাপনা</h3>
+        <div class="rule-item"><span class="rule-number">২৩.</span> শ্রেণিকক্ষে মোবাইল ফোন ব্যবহার বা কথা বলা সম্পূর্ণ নিষিদ্ধ।</div>
+        <div class="rule-item"><span class="rule-number">২৪.</span> ক্লাসে শিক্ষার্থীদের প্রতি বৈষম্যহীন ও বন্ধুত্বপূর্ণ আচরণ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>উপকরণ ব্যবহার</h3>
+        <div class="rule-item"><span class="rule-number">২৫.</span> মাল্টিমিডিয়া ক্লাসরুম ও শিক্ষা উপকরণ ব্যবহারে সচেষ্ট থাকতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">২৬.</span> ব্ল্যাকবোর্ড বা হোয়াইটবোর্ড ব্যবহারে পরিচ্ছন্নতা বজায় রাখতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>মূল্যায়ন</h3>
+        <div class="rule-item"><span class="rule-number">২৭.</span> নিয়মিত শ্রেণির কাজ (CW) এবং বাড়ির কাজ (HW) দেওয়া ও দেখা।</div>
+        <div class="rule-item"><span class="rule-number">২৮.</span> দুর্বল শিক্ষার্থীদের শনাক্ত করে নিরাময়মূলক (Remedial) ক্লাস নেওয়া।</div>
+    </div>
+    <div class="card">
+        <h3>প্রক্সি ক্লাস</h3>
+        <div class="rule-item"><span class="rule-number">২৯.</span> কোনো সহকর্মী অনুপস্থিত থাকলে রুটিন অনুযায়ী প্রক্সি ক্লাস নিতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৩০.</span> ক্লাস চলাকালীন বাইরে অযথা ঘোরাফেরা করা যাবে না।</div>
+    </div>
+
+    <div class="card">
+        <h3>শাস্তি ও শাসন</h3>
+        <div class="rule-item"><span class="rule-number">৩১.</span> শিক্ষার্থীদের শারীরিক ও মানসিক নির্যাতন (Corporal Punishment) সম্পূর্ণ নিষিদ্ধ।</div>
+        <div class="rule-item"><span class="rule-number">৩২.</span> শিক্ষার্থীদের সাথে অশালীন ভাষা বা ব্যঙ্গাত্মক মন্তব্য করা যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>ড্রেস কোড</h3>
+        <div class="rule-item"><span class="rule-number">৩৩.</span> মার্জিত ও শিক্ষকসুলভ পোশাক পরিধান করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৩৪.</span> গলায় সর্বদা পরিচয়পত্র (ID Card) ঝুলিয়ে রাখা বা সাথে রাখা বাঞ্ছনীয়।</div>
+    </div>
+    <div class="card">
+        <h3>ধূমপান ও রাজনীতি</h3>
+        <div class="rule-item"><span class="rule-number">৩৫.</span> শিক্ষা প্রতিষ্ঠান আঙিনায় ধূমপান সম্পূর্ণ নিষিদ্ধ।</div>
+        <div class="rule-item"><span class="rule-number">৩৬.</span> সক্রিয় রাজনীতি বা সরকার বিরোধী কোনো কার্যক্রমে প্রত্যক্ষ অংশগ্রহণ করা যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>গোপনীয়তা</h3>
+        <div class="rule-item"><span class="rule-number">৩৭.</span> প্রশ্নপত্র প্রণয়ন ও পরীক্ষার ফলাফলের গোপনীয়তা রক্ষা করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৩৮.</span> প্রতিষ্ঠানের অভ্যন্তরীণ প্রশাসনিক গোপন তথ্য বাইরে ফাঁস করা যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>সহকর্মীদের সম্মান</h3>
+        <div class="rule-item"><span class="rule-number">৩৯.</span> সহকর্মীদের সাথে সৌজন্যমূলক আচরণ ও পারস্পরিক শ্রদ্ধা বজায় রাখতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৪০.</span> চেইন অব কমান্ড বা জ্যেষ্ঠতা মেনে চলতে হবে।</div>
+    </div>
+
+    <div class="card">
+        <h3>পরীক্ষা ডিউটি</h3>
+        <div class="rule-item"><span class="rule-number">৪১.</span> পরীক্ষা চলাকালীন পূর্ণ সময় সতর্কতার সাথে হল ডিউটি পালন করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৪২.</span> পরীক্ষা কক্ষে মোবাইল ফোন বা ইলেকট্রনিক ডিভাইস নেওয়া যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>খাতা মূল্যায়ন</h3>
+        <div class="rule-item"><span class="rule-number">৪৩.</span> নির্ধারিত সময়ের মধ্যে উত্তরপত্র মূল্যায়ন করে নম্বর ফর্দ জমা দিতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৪৪.</span> উত্তরপত্র মূল্যায়নে নিরপেক্ষতা ও স্বচ্ছতা বজায় রাখতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>প্রশ্নপত্র তৈরি</h3>
+        <div class="rule-item"><span class="rule-number">৪৫.</span> সিলেবাস ও মানবন্টন অনুসরণ করে সৃজনশীল প্রশ্ন তৈরি করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৪৬.</span> অন্যের তৈরি বা গাইড বই থেকে সরাসরি প্রশ্ন কপি করা যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>টেবুলেশন</h3>
+        <div class="rule-item"><span class="rule-number">৪৭.</span> রেজাল্ট শিট বা টেবুলেশন তৈরিতে নির্ভুলতা নিশ্চিত করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৪৮.</span> ফলাফলের ত্রুটি থাকলে সংশ্লিষ্ট শিক্ষক দায়ী থাকবেন।</div>
+    </div>
+    <div class="card">
+        <h3>অভিভাবক যোগাযোগ</h3>
+        <div class="rule-item"><span class="rule-number">৪৯.</span> পরীক্ষার খাতা বা ফলাফল নিয়ে অভিভাবকদের সদুত্তর দিতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৫০.</span> প্রগ্রেস রিপোর্ট কার্ডে নিয়মিত স্বাক্ষর ও মন্তব্য প্রদান করতে হবে।</div>
+    </div>
+
+    <div class="card">
+        <h3>কোচিং বাণিজ্য</h3>
+        <div class="rule-item"><span class="rule-number">৫১.</span> নিজের প্রতিষ্ঠানের শিক্ষার্থীদের প্রাইভেট পড়ানো বা কোচিং করানো নিষিদ্ধ।</div>
+        <div class="rule-item"><span class="rule-number">৫২.</span> কোচিং বাণিজ্যের নীতিমালা-২০১২ কঠোরভাবে মেনে চলতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>আর্থিক লেনদেন</h3>
+        <div class="rule-item"><span class="rule-number">৫৩.</span> শিক্ষার্থীদের কাছ থেকে রসিদ ছাড়া কোনো অর্থ আদায় করা যাবে না।</div>
+        <div class="rule-item"><span class="rule-number">৫৪.</span> প্রতিষ্ঠানের তহবিলের টাকা ব্যক্তিগত কাজে ব্যবহার করা দণ্ডনীয় অপরাধ।</div>
+    </div>
+    <div class="card">
+        <h3>এমপিও ও বেতন</h3>
+        <div class="rule-item"><span class="rule-number">৫৫.</span> এমপিওভুক্ত শিক্ষকদের সরকারি স্কেল অনুযায়ী বেতন-ভাতা গ্রহণ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৫৬.</span> ভুয়া সনদ বা তথ্য দিয়ে বেতন গ্রহণ করলে তা ফেরতযোগ্য ও শাস্তিযোগ্য।</div>
+    </div>
+    <div class="card">
+        <h3>ভবিষ্য তহবিল</h3>
+        <div class="rule-item"><span class="rule-number">৫৭.</span> প্রভিডেন্ট ফান্ড বা কল্যাণ তহবিলে নিয়মিত চাঁদা প্রদান করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৫৮.</span> অবসরকালীন সুবিধার জন্য সকল রেকর্ড হালনাগাদ রাখতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>ক্রয় কমিটি</h3>
+        <div class="rule-item"><span class="rule-number">৫৯.</span> প্রতিষ্ঠানের কেনাকাটায় স্বচ্ছতা ও কমিটির অনুমোদন থাকতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৬০.</span> ভাউচার ও ক্যাশ মেমো ছাড়া কোনো খরচ বৈধ বলে গণ্য হবে না।</div>
+    </div>
+
+    <div class="card">
+        <h3>প্রশাসনিক তদারকি</h3>
+        <div class="rule-item"><span class="rule-number">৬১.</span> প্রধান শিক্ষক প্রতিদিন সকল শিক্ষকের হাজিরা ও লেসন প্ল্যান তদারকি করবেন।</div>
+        <div class="rule-item"><span class="rule-number">৬২.</span> ক্লাস রুটিন তৈরি ও সুষম বন্টন নিশ্চিত করবেন।</div>
+    </div>
+    <div class="card">
+        <h3>আর্থিক ব্যবস্থাপনা</h3>
+        <div class="rule-item"><span class="rule-number">৬৩.</span> ক্যাশ বই ও ভাউচার নিয়মিত অডিট ও স্বাক্ষর করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৬৪.</span> বিদ্যালয়ের আয়-ব্যয়ের হিসাব ম্যানেজিং কমিটির সভায় পেশ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>মিটিং ও সভা</h3>
+        <div class="rule-item"><span class="rule-number">৬৫.</span> মাসে অন্তত একটি স্টাফ মিটিং বা শিক্ষক সভা করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৬৬.</span> ম্যানেজিং কমিটি বা গভর্নিং বডির সিদ্ধান্ত বাস্তবায়ন করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>সরকারি আদেশ</h3>
+        <div class="rule-item"><span class="rule-number">৬৭.</span> মন্ত্রণালয় ও শিক্ষা বোর্ডের জারিকৃত সার্কুলার নোটিশ বোর্ডে টাঙাতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৬৮.</span> জাতীয় দিবসসমূহ পালনে নেতৃত্ব দিতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>এসিআর (ACR)</h3>
+        <div class="rule-item"><span class="rule-number">৬৯.</span> সহকারী শিক্ষকদের বার্ষিক গোপনীয় অনুবেদন (ACR) পূরণ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৭০.</span> প্রতিষ্ঠানের শিক্ষার মান উন্নয়নে জবাবদিহিতা নিশ্চিত করতে হবে।</div>
+    </div>
+
+    <div class="card">
+        <h3>সহশিক্ষা কার্যক্রম</h3>
+        <div class="rule-item"><span class="rule-number">৭১.</span> বিতর্ক, খেলাধুলা ও সাংস্কৃতিক অনুষ্ঠানে শিক্ষকদের দায়িত্ব পালন করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৭২.</span> স্কাউটিং, গার্ল গাইড বা বিএনসিসি কার্যক্রমে সহায়তা করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>জাতীয় দিবস</h3>
+        <div class="rule-item"><span class="rule-number">৭৩.</span> ২১শে ফেব্রুয়ারি, ২৬শে মার্চ ও ১৬ই ডিসেম্বর উপস্থিত থাকা বাধ্যতামূলক।</div>
+        <div class="rule-item"><span class="rule-number">৭৪.</span> শোক দিবস ও অন্যান্য রাষ্ট্রীয় কর্মসূচিতে সক্রিয় অংশগ্রহণ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>পরিষ্কার পরিচ্ছন্নতা</h3>
+        <div class="rule-item"><span class="rule-number">৭৫.</span> নিজ নিজ শ্রেণিকক্ষ ও আঙিনা পরিষ্কার রাখতে শিক্ষার্থীদের উদ্বুদ্ধ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৭৬.</span> সপ্তাহে অন্তত একদিন ক্যাম্পাস পরিচ্ছন্নতা কর্মসূচি পালন করা।</div>
+    </div>
+    <div class="card">
+        <h3>বৃক্ষরোপণ</h3>
+        <div class="rule-item"><span class="rule-number">৭৭.</span> বিদ্যালয় প্রাঙ্গণে বৃক্ষরোপণ ও পরিচর্যায় ভূমিকা রাখতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৭৮.</span> পরিবেশ রক্ষায় পলিথিন ও প্লাস্টিক বর্জ্য মুক্ত ক্যাম্পাস গড়তে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>সামাজিক দায়িত্ব</h3>
+        <div class="rule-item"><span class="rule-number">৭৯.</span> বাল্যবিবাহ ও মাদকবিরোধী সচেতনতা তৈরিতে কাজ করতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৮০.</span> শিক্ষার্থীদের নৈতিক ও মানবিক মূল্যবোধ শেখাতে হবে।</div>
+    </div>
+
+    <div class="card">
+        <h3>নিয়োগ বিধি</h3>
+        <div class="rule-item"><span class="rule-number">৮১.</span> এনটিআরসিএ (NTRCA) এর সুপারিশ ও বিধি মোতাবেক নিয়োগ কার্যকর হবে।</div>
+        <div class="rule-item"><span class="rule-number">৮২.</span> যোগদানের সময় সকল মূল সনদ প্রদর্শন ও অনুলিপি জমা দিতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>শিক্ষানবিশ কাল</h3>
+        <div class="rule-item"><span class="rule-number">৮৩.</span> যোগদানের পর ২ বছর শিক্ষানবিশ কাল হিসেবে গণ্য হবে।</div>
+        <div class="rule-item"><span class="rule-number">৮৪.</span> এই সময়ে অযোগ্য বিবেচিত হলে চাকরি স্থায়ীকরণ হবে না।</div>
+    </div>
+    <div class="card">
+        <h3>পদত্যাগ</h3>
+        <div class="rule-item"><span class="rule-number">৮৫.</span> চাকরি ছাড়তে চাইলে অন্তত ১ মাস আগে নোটিশ দিতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৮৬.</span> নোটিশ না দিলে ১ মাসের মূল বেতন ফেরত দিতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>বরখাস্ত/অপসারণ</h3>
+        <div class="rule-item"><span class="rule-number">৮৭.</span> নৈতিক স্খলন বা দুর্নীতির দায়ে চাকরি থেকে বরখাস্ত করা যেতে পারে।</div>
+        <div class="rule-item"><span class="rule-number">৮৮.</span> বিনা নোটিশে দীর্ঘ অনুপস্থিতির কারণে চাকরি চ্যুত হতে পারেন।</div>
+    </div>
+    <div class="card">
+        <h3>বদলি</h3>
+        <div class="rule-item"><span class="rule-number">৮৯.</span> এমপিওভুক্ত শিক্ষকদের বদলি নীতিমালা সরকারের আদেশ অনুযায়ী হবে।</div>
+        <div class="rule-item"><span class="rule-number">৯০.</span> পারস্পরিক সম্মতিতে বদলির ক্ষেত্রে এনওসি (NOC) প্রয়োজন।</div>
+    </div>
+
+    <div class="card">
+        <h3>আইসিটি দক্ষতা</h3>
+        <div class="rule-item"><span class="rule-number">৯১.</span> প্রত্যেক শিক্ষককে কম্পিউটার ও ইন্টারনেটের মৌলিক জ্ঞান রাখতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৯২.</span> শিক্ষক বাতায়নে সদস্য হওয়া এবং নিয়মিত কনটেন্ট আপলোড করা।</div>
+    </div>
+    <div class="card">
+        <h3>অনলাইন ক্লাস</h3>
+        <div class="rule-item"><span class="rule-number">৯৩.</span> জরুরি প্রয়োজনে বা বন্ধের সময় অনলাইনে ক্লাস নেওয়ার দক্ষতা থাকতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৯৪.</span> সামাজিক যোগাযোগ মাধ্যমে প্রতিষ্ঠানের ভাবমূর্তি ক্ষুণ্ন হয় এমন কিছু করা যাবে না।</div>
+    </div>
+    <div class="card">
+        <h3>প্রশিক্ষণ</h3>
+        <div class="rule-item"><span class="rule-number">৯৫.</span> সরকারি টিচার্স ট্রেনিং (B.Ed/M.Ed) বা বিষয়ভিত্তিক প্রশিক্ষণে অংশ নেওয়া বাধ্যতামূলক।</div>
+        <div class="rule-item"><span class="rule-number">৯৬.</span> প্রশিক্ষণ লব্ধ জ্ঞান শ্রেণিকক্ষে প্রয়োগ করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>নতুন কারিকুলাম</h3>
+        <div class="rule-item"><span class="rule-number">৯৭.</span> নতুন শিক্ষাক্রম ও মূল্যায়ন পদ্ধতি সম্পর্কে স্বচ্ছ ধারণা রাখতে হবে।</div>
+        <div class="rule-item"><span class="rule-number">৯৮.</span> নৈপুণ্য অ্যাপ বা নির্দিষ্ট অ্যাপে শিক্ষার্থীদের ডাটা এন্ট্রি করতে হবে।</div>
+    </div>
+    <div class="card">
+        <h3>অবসর</h3>
+        <div class="rule-item"><span class="rule-number">৯৯.</span> ৬০ বছর বয়স পূর্ণ হলে শিক্ষক অবসরে যাবেন।</div>
+        <div class="rule-item"><span class="rule-number">১০০.</span> অবসরের পর কল্যাণ ট্রাস্ট ও অবসর ভাতার জন্য দ্রুত ফাইল প্রসেস করতে হবে।</div>
+    </div>
+
+</div>
+<div>বিশেষ দ্রষ্টব্য:
+<p>এই বিধিগুলো সরকারি চাকরি বিধি (BSR), বেসরকারি শিক্ষা প্রতিষ্ঠান জনবল কাঠামো ও এমপিও নীতিমালা-২০২১, এবং শিক্ষা মন্ত্রণালয়ের বিভিন্ন পরিপত্র থেকে সংকলিত। প্রতিষ্ঠানভেদে (যেমন কিন্ডারগার্টেন বা ইংলিশ মিডিয়াম) কিছু নিয়ম সামান্য ভিন্ন হতে পারে, তবে মূল কাঠামো একই থাকে।</p>
+</div>
+</body>
+</html>
